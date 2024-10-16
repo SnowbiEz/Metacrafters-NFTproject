@@ -9,13 +9,11 @@ Assessment Requirements
 */
 
 // create a variable to hold your NFT's
+const myNFT = [];
 
 // this function will take in some values as parameters, create an
 // NFT object using the parameters passed to it for its metadata, 
 // and store it in the variable above.
-const myNFT = [];
-
-
 function mintNFT (_weaponName, _lvl, _weaponType, _cost, _weight) {
     const NFT = {
         "weaponName": _weaponName,
@@ -31,14 +29,15 @@ function mintNFT (_weaponName, _lvl, _weaponType, _cost, _weight) {
 // create a "loop" that will go through an "array" of NFT's
 // and print their metadata with console.log()
 function listNFTs () {
+    var counter = 1;
     for (let i = 0; i < myNFT.length; i++) {
-        console.log("Name: " + myNFT[i].weaponName);
+        console.log("NFT [ " + counter++ + " ]\nName: " + myNFT[i].weaponName + "\nLVL" + myNFT[i].lvl +"\nWeapon Type: " + myNFT[i].weaponType + "\nCost: " + myNFT[i].cost + "\nWeight: " + myNFT[i].weight);
     }
 }
 
 // print the total number of NFTs we have minted to the console
 function getTotalSupply() {
-    console.log(myNFT.length)
+    console.log("\n you have minted a total of " + myNFT.length + " NFTs");
 }
 
 // call your functions below this line
